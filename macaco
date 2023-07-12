@@ -1,0 +1,38 @@
+class macaco:
+    def __init__(self, nome):
+        self.nome = nome
+        self.bucho = []
+
+    def comer(self, alimento):
+        self.bucho.append(alimento)
+
+    def verBucho(self):
+        print(f"Bucho do {self.nome}: {self.bucho}")
+
+    def digerir(self):
+        if len(self.bucho) > 0:
+            self.bucho.pop(0)
+            print(f"{self.nome} digeriu um alimento.")
+        else:
+            print(f"{self.nome} não tem nada no bucho para digerir.")
+
+if __name__ == "__main__":
+    macaco1 = macaco("macaco 1")
+    macaco2 = macaco("macaco 2")
+
+    macaco1.comer("Banana")
+    macaco1.comer("Maçã")
+    macaco1.comer("Laranja")
+
+    macaco2.comer("Cenoura")
+    macaco2.comer("Alface")
+    macaco2.comer("Tomate")
+
+    macaco1.verBucho()
+    macaco2.verBucho()
+
+    macaco1.digerir()
+    macaco2.digerir()
+
+    macaco1.verBucho()
+    macaco2.verBucho()
